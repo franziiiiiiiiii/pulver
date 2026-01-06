@@ -46,7 +46,7 @@ a_alpha_therm = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], 
 c_param_opt, c_param_cov = curve_fit(gerade_fit, xdata=data_alpha_c["T"] + 273.15, ydata=data_alpha_c["c"], sigma=data_alpha_c["delta-c"], absolute_sigma=True)
 c_param_err = np.sqrt(np.diag(c_param_cov))
 
-c_alpha_term = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], a_param_err[1])
+c_alpha_therm = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
 
 ## plot a
 x = np.linspace(start=17 + 273.15, stop=135 + 273.15, num=10)
@@ -72,7 +72,7 @@ plt.ylabel("c in \u00C5")
 plt.errorbar(x=data_alpha_c["T"] + 273.15, y=data_alpha_c["c"], yerr=data_alpha_c["delta-c"], fmt="o", capsize=5, label="c")
 plt.plot(x, gerade_fit(x, c_param_opt[0], c_param_opt[1]), label="c fit")
 # Place text at T=100 and a=5.48 (adjust based on your actual data range)
-plt.text(350, 6.44, f"$\\alpha_{{therm\ of\ c}}$ = {a_alpha_therm:.3e} / K", fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
+plt.text(350, 6.44, f"$\\alpha_{{therm\ of\ c}}$ = {c_alpha_therm:.3e} / K", fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
 
 plt.legend(loc="upper left")
 plt.savefig(kno3_fig_path / "KNO3_alpha_c.png", dpi=300, bbox_inches='tight')
@@ -89,7 +89,7 @@ a_alpha_therm = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], 
 c_param_opt, c_param_cov = curve_fit(gerade_fit, xdata=data_beta_c["T"] + 273.15, ydata=data_beta_c["c"], sigma=data_beta_c["delta-c"], absolute_sigma=True)
 c_param_err = np.sqrt(np.diag(c_param_cov))
 
-c_alpha_term = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], a_param_err[1])
+c_alpha_therm = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
 
 ## plot a
 x = np.linspace(start=125 + 273.15, stop=147 + 273.15, num=10)
@@ -115,7 +115,7 @@ plt.ylabel("c in \u00C5")
 plt.errorbar(x=data_beta_c["T"] + 273.15, y=data_beta_c["c"], yerr=data_beta_c["delta-c"], fmt="o", capsize=5, label="c")
 plt.plot(x, gerade_fit(x, c_param_opt[0], c_param_opt[1]), label="c fit")
 # Place text at T=100 and a=5.48 (adjust based on your actual data range)
-plt.text(410, 9.71, f"$\\alpha_{{therm\ of\ c}}$ = {a_alpha_therm:.3e} / K", fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
+plt.text(410, 9.71, f"$\\alpha_{{therm\ of\ c}}$ = {c_alpha_therm:.3e} / K", fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
 
 plt.legend(loc="upper left")
 plt.savefig(kno3_fig_path / "KNO3_beta_c.png", dpi=300, bbox_inches='tight')
@@ -132,7 +132,7 @@ a_alpha_therm = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], 
 c_param_opt, c_param_cov = curve_fit(gerade_fit, xdata=data_gamma_c["T"] + 273.15, ydata=data_gamma_c["c"], sigma=data_gamma_c["delta-c"], absolute_sigma=True)
 c_param_err = np.sqrt(np.diag(c_param_cov))
 
-c_alpha_term = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], a_param_err[1])
+c_alpha_therm = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
 
 ## plot a
 x = np.linspace(start=70 + 273.15, stop=123 + 273.15, num=10)
@@ -158,7 +158,7 @@ plt.ylabel("c in \u00C5")
 plt.errorbar(x=data_gamma_c["T"] + 273.15, y=data_gamma_c["c"], yerr=data_gamma_c["delta-c"], fmt="o", capsize=5, label="c")
 plt.plot(x, gerade_fit(x, c_param_opt[0], c_param_opt[1]), label="c fit")
 # Place text at T=100 and a=5.48 (adjust based on your actual data range)
-plt.text(370, 9.05, f"$\\alpha_{{therm\ of\ c}}$ = {a_alpha_therm:.3e} / K", fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
+plt.text(370, 9.05, f"$\\alpha_{{therm\ of\ c}}$ = {c_alpha_therm:.3e} / K", fontsize=12, bbox=dict(facecolor='white', alpha=0.5))
 
 plt.legend(loc="upper left")
 plt.savefig(kno3_fig_path / "KNO3_gamma_c.png", dpi=300, bbox_inches='tight')
