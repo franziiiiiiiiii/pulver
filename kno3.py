@@ -89,7 +89,7 @@ a_alpha_therm = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], 
 c_param_opt, c_param_cov = curve_fit(gerade_fit, xdata=data_beta_c["T"] + 273.15, ydata=data_beta_c["c"], sigma=data_beta_c["delta-c"], absolute_sigma=True)
 c_param_err = np.sqrt(np.diag(c_param_cov))
 
-c_alpha_term = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
+c_alpha_therm = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
 
 ## plot a
 x = np.linspace(start=125 + 273.15, stop=147 + 273.15, num=10)
@@ -132,7 +132,7 @@ a_alpha_therm = ufloat(a_param_opt[0], a_param_err[0]) / ufloat(a_param_opt[1], 
 c_param_opt, c_param_cov = curve_fit(gerade_fit, xdata=data_gamma_c["T"] + 273.15, ydata=data_gamma_c["c"], sigma=data_gamma_c["delta-c"], absolute_sigma=True)
 c_param_err = np.sqrt(np.diag(c_param_cov))
 
-c_alpha_term = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
+c_alpha_therm = ufloat(c_param_opt[0], c_param_err[0]) / ufloat(c_param_opt[1], c_param_err[1])
 
 ## plot a
 x = np.linspace(start=70 + 273.15, stop=123 + 273.15, num=10)
